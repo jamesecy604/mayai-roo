@@ -223,10 +223,8 @@ export class Task extends EventEmitter<ClineEvents> {
 			console.error("Failed to initialize RooIgnoreController:", error)
 		})
 
-		this.apiConfiguration = {
-			...apiConfiguration,
-			taskId: this.taskId
-		}
+		apiConfiguration.taskId = this.taskId
+		this.apiConfiguration = apiConfiguration
 		this.api = buildApiHandler(this.apiConfiguration)
 		this.promptCacheKey = crypto.randomUUID()
 

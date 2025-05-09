@@ -523,6 +523,7 @@ export const providerSettingsSchemaDiscriminated = z
 export const providerSettingsSchema = z
 	.object({
 		apiProvider: providerNamesSchema.optional(),
+		taskId: z.string().optional(),
 	})
 	.merge(anthropicSchema)
 	.merge(glamaSchema)
@@ -553,6 +554,7 @@ type ProviderSettingsRecord = Record<Keys<ProviderSettings>, undefined>
 
 const providerSettingsRecord: ProviderSettingsRecord = {
 	apiProvider: undefined,
+	taskId: undefined,
 	// Anthropic
 	apiModelId: undefined,
 	apiKey: undefined,

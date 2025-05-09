@@ -2,7 +2,7 @@ import { ModelInfo, ProviderName, ProviderSettings } from "../schemas"
 
 export type { ModelInfo, ProviderName, ProviderSettings }
 
-export type ApiHandlerOptions = Omit<ProviderSettings, "apiProvider" | "id"> & { taskId?: string }
+export type ApiHandlerOptions = Omit<ProviderSettings, "apiProvider" | "id">
 
 // Anthropic
 // https://docs.anthropic.com/en/docs/about-claude/models

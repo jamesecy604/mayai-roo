@@ -38,7 +38,7 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 		const headers = {
 			...DEFAULT_HEADERS,
 			...(this.options.openAiHeaders || {}),
-			...(this.options.taskId ? { 'x-task-id': this.options.taskId } : {}),
+			...({ 'X-Task-ID': this.options.taskId } ),
 		}
 
 		if (isAzureAiInference) {
