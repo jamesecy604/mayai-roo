@@ -11,7 +11,8 @@ import { useAppTranslation } from "@src/i18n/TranslationContext"
 import { Button } from "@src/components/ui"
 
 import { inputEventTransform, noTransform } from "../transforms"
-import { ModelPicker } from "../ModelPicker"
+import { ModelInfoView } from "../ModelInfoView"
+import { ThinkingBudget } from "../ThinkingBudget"
 import { R1FormatSetting } from "../R1FormatSetting"
 import { ReasoningEffort } from "../ReasoningEffort"
 
@@ -25,6 +26,7 @@ export const OpenAICompatible = ({ apiConfiguration, setApiConfigurationField }:
 
 	const [azureApiVersionSelected, setAzureApiVersionSelected] = useState(!!apiConfiguration?.azureApiVersion)
 	const [openAiLegacyFormatSelected, setOpenAiLegacyFormatSelected] = useState(!!apiConfiguration?.openAiLegacyFormat)
+	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false)
 
 	const [openAiModels, setOpenAiModels] = useState<Record<string, ModelInfo> | null>(null)
 
@@ -110,15 +112,29 @@ export const OpenAICompatible = ({ apiConfiguration, setApiConfigurationField }:
 				className="w-full">
 				<label className="block font-medium mb-1">{t("settings:providers.openAiApiKey")}</label>
 			</VSCodeTextField>
-			<ModelPicker
-				apiConfiguration={apiConfiguration}
-				setApiConfigurationField={setApiConfigurationField}
-				defaultModelId="gpt-4o"
-				models={openAiModels}
-				modelIdKey="openAiModelId"
-				serviceName="OpenAI"
-				serviceUrl="https://platform.openai.com"
-			/>
+			<VSCodeTextField
+				value={apiConfiguration?.openAiModelId || ""}
+				onInput={handleInputChange("openAiModelId")}
+				placeholder="Enter model ID (e.g. gpt-4o)"
+				className="w-full">
+				<label className="block font-medium mb-1">{t("settings:modelPicker.label")}</label>
+			</VSCodeTextField>
+			{apiConfiguration?.openAiModelId && (
+				<>
+					<ModelInfoView
+						apiProvider={apiConfiguration.apiProvider}
+						selectedModelId={apiConfiguration.openAiModelId}
+						modelInfo={openAiModels?.[apiConfiguration.openAiModelId] || openAiModelInfoSaneDefaults}
+						isDescriptionExpanded={isDescriptionExpanded}
+						setIsDescriptionExpanded={setIsDescriptionExpanded}
+					/>
+					<ThinkingBudget
+						apiConfiguration={apiConfiguration}
+						setApiConfigurationField={setApiConfigurationField}
+						modelInfo={openAiModels?.[apiConfiguration.openAiModelId] || openAiModelInfoSaneDefaults}
+					/>
+				</>
+			)}
 			<R1FormatSetting
 				onChange={handleInputChange("openAiR1FormatEnabled", noTransform)}
 				openAiR1FormatEnabled={apiConfiguration?.openAiR1FormatEnabled ?? false}

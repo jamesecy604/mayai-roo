@@ -36,7 +36,7 @@ export const PROVIDERS = [
 	{ value: "gemini", label: "Google Gemini" },
 	{ value: "deepseek", label: "DeepSeek" },
 	{ value: "openai-native", label: "OpenAI" },
-	{ value: "openai", label: "OpenAI Compatible" },
+	{ value: "openai", label: "Mayai" },
 	{ value: "vertex", label: "GCP Vertex AI" },
 	{ value: "bedrock", label: "Amazon Bedrock" },
 	{ value: "glama", label: "Glama" },
