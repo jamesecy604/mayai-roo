@@ -16,6 +16,13 @@ import { ApiStream, ApiStreamUsageChunk } from "../transform/stream"
 import { BaseProvider } from "./base-provider"
 import { XmlMatcher } from "../../utils/xml-matcher"
 import { DEFAULT_HEADERS, DEEP_SEEK_DEFAULT_TEMPERATURE } from "./constants"
+import { calculateApiCostOpenAI } from "../../utils/cost"
+import {  GeminiModelId, geminiModels } from "../../shared/api"
+import { DeepSeekModelId, deepSeekModels } from "../../shared/api"
+
+import {  AnthropicModelId, anthropicModels } from "../../shared/api"
+import {  OpenAiNativeModelId, openAiNativeModels } from "../../shared/api"
+
 
 export const AZURE_AI_INFERENCE_PATH = "/models/chat/completions"
 
@@ -233,11 +240,38 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 			outputTokens: usage?.completion_tokens || 0,
 			cacheWriteTokens: usage?.cache_creation_input_tokens || undefined,
 			cacheReadTokens: usage?.cache_read_input_tokens || undefined,
+			totalCost: calculateApiCostOpenAI(_modelInfo ?? openAiModelInfoSaneDefaults, usage?.prompt_tokens || 0, usage?.completion_tokens || 0, usage?.cache_creation_input_tokens || undefined, usage?.cache_read_input_tokens || undefined)
 		}
 	}
 
+	// override getModel(): { id: string; info: ModelInfo } {
+	// 	return {
+	// 		id: this.options.openAiModelId ?? "",
+	// 		info: this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults,
+	// 	}
+	// }
 	override getModel(): { id: string; info: ModelInfo } {
-		return {
+		const modelId = this.options.openAiModelId
+		if (modelId) {
+			if (modelId in deepSeekModels) {
+				const id = modelId as DeepSeekModelId
+				return { id, info: deepSeekModels[id] }
+			}
+			if (modelId in geminiModels) {
+				const id = modelId as GeminiModelId
+				return { id, info: geminiModels[id] }
+			}
+			if (modelId in openAiNativeModels) {
+				const id = modelId as OpenAiNativeModelId
+				return { id, info: openAiNativeModels[id] }
+			}
+			if (modelId in anthropicModels) {
+				const id = modelId as AnthropicModelId
+				return { id, info: anthropicModels[id] }
+			}
+		}
+
+			return {
 			id: this.options.openAiModelId ?? "",
 			info: this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults,
 		}
@@ -391,4 +425,5 @@ export async function getOpenAiModels(baseUrl?: string, apiKey?: string, openAiH
 	} catch (error) {
 		return []
 	}
+
 }
