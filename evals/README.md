@@ -1,10 +1,10 @@
-# Run Roo Code Evals
+# Run Mayai Code Evals
 
 ## Get Started
 
 NOTE: This is MacOS only for now!
 
-Clone the Roo Code repo:
+Clone the Mayai Code repo:
 
 ```sh
 git clone https://github.com/RooVetGit/Roo-Code.git

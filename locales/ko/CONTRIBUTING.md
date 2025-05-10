@@ -2,10 +2,10 @@
 
 [日本語](../ja/CONTRIBUTING.md) • <b>한국어</b> • [Polski](../pl/CONTRIBUTING.md) • [Português (BR)](../pt-BR/CONTRIBUTING.md) • [Türkçe](../tr/CONTRIBUTING.md) • [Tiếng Việt](../vi/CONTRIBUTING.md) • [简体中文](../zh-CN/CONTRIBUTING.md) • [繁體中文](../zh-TW/CONTRIBUTING.md)
 
-# Roo Code 기여 가이드
+# Mayai Code 기여 가이드
 
-Roo Code는 커뮤니티 주도의 프로젝트이며, 모든 기여를 소중하게 생각합니다. 모두를 위한 원활하고 효과적인 프로세스를 위해 **"[Issue-First](#2-핵심-원칙-issue-first-접근법)" 원칙**을 따릅니다. 즉, 모든 작업은 Pull Request를 제출하기 _전에_ 반드시 GitHub Issue와 연결되어야 합니다(자세한 내용은 [PR 정책](#pull-request-pr-정책) 참고). 이 가이드를 꼼꼼히 읽고 기여 방법을 이해해 주세요.
-이 가이드는 Roo Code에 버그 수정, 기능 추가, 문서 개선 등 다양한 방식으로 기여하는 방법을 안내합니다.
+Mayai Code는 커뮤니티 주도의 프로젝트이며, 모든 기여를 소중하게 생각합니다. 모두를 위한 원활하고 효과적인 프로세스를 위해 **"[Issue-First](#2-핵심-원칙-issue-first-접근법)" 원칙**을 따릅니다. 즉, 모든 작업은 Pull Request를 제출하기 _전에_ 반드시 GitHub Issue와 연결되어야 합니다(자세한 내용은 [PR 정책](#pull-request-pr-정책) 참고). 이 가이드를 꼼꼼히 읽고 기여 방법을 이해해 주세요.
+이 가이드는 Mayai Code에 버그 수정, 기능 추가, 문서 개선 등 다양한 방식으로 기여하는 방법을 안내합니다.
 
 ## 목차
 
@@ -18,7 +18,7 @@ Roo Code는 커뮤니티 주도의 프로젝트이며, 모든 기여를 소중�
         - [문서화](#문서화)
         - [안정성](#안정성)
         - [국제화](#국제화)
-    - [3. Roo Code 커뮤니티 참여](#3-roo-code-커뮤니티-참여)
+    - [3. Mayai Code 커뮤니티 참여](#3-roo-code-커뮤니티-참여)
 - [II. 기여 내용 찾기 및 계획 세우기](#ii-기여-내용-찾기-및-계획-세우기)
     - [1. 기여 유형](#1-기여-유형)
     - [2. 핵심 원칙: Issue-First 접근법](#2-핵심-원칙-issue-first-접근법)
@@ -49,7 +49,7 @@ Roo Code는 커뮤니티 주도의 프로젝트이며, 모든 기여를 소중�
 
 ### 2. 프로젝트 로드맵 이해
 
-Roo Code는 명확한 개발 로드맵을 가지고 있으며, 우리의 우선순위와 미래 방향을 제시합니다. 로드맵을 이해하면 다음과 같은 도움이 됩니다:
+Mayai Code는 명확한 개발 로드맵을 가지고 있으며, 우리의 우선순위와 미래 방향을 제시합니다. 로드맵을 이해하면 다음과 같은 도움이 됩니다:
 
 - 기여를 프로젝트 목표에 맞출 수 있음
 - 본인의 전문성이 가장 필요한 영역을 찾을 수 있음
@@ -101,19 +101,19 @@ Roo가 모든 컴퓨터에서 잘 동작하도록 하고 싶습니다:
 
 Roo가 모두의 언어를 사용할 수 있도록 하고 싶습니다:
 
-- 我们希望 Roo Code 说每个人的语言
-- Queremos que Roo Code hable el idioma de todos
-- हम चाहते हैं कि Roo Code हर किसी की भाषा बोले
-- نريد أن يتحدث Roo Code لغة الجميع
+- 我们希望 Mayai Code 说每个人的语言
+- Queremos que Mayai Code hable el idioma de todos
+- हम चाहते हैं कि Mayai Code हर किसी की भाषा बोले
+- نريد أن يتحدث Mayai Code لغة الجميع
 
 로드맵 목표를 앞당기는 기여는 특히 환영합니다. 위 기둥과 관련된 작업을 한다면 PR 설명에 꼭 언급해 주세요.
 
-### 3. Roo Code 커뮤니티 참여
+### 3. Mayai Code 커뮤니티 참여
 
-Roo Code 커뮤니티와 소통하는 것은 시작하기에 좋은 방법입니다:
+Mayai Code 커뮤니티와 소통하는 것은 시작하기에 좋은 방법입니다:
 
 - **주요 방법**:
-    1.  [Roo Code Discord 커뮤니티](https://discord.gg/roocode)에 가입하세요.
+    1.  [Mayai Code Discord 커뮤니티](https://discord.gg/roocode)에 가입하세요.
     2.  가입 후 **Hannes Rudolph**(Discord: `hrudolph`)에게 DM을 보내 관심을 알리고 안내를 받으세요.
 - **경험자용 대안**: Issue-First 접근법에 익숙하다면 [Kanban 보드](https://github.com/orgs/RooVetGit/projects/1)를 따라가며 GitHub에서 Issue 및 Pull Request로 직접 참여할 수 있습니다.
 
@@ -151,7 +151,7 @@ Roo Code 커뮤니티와 소통하는 것은 시작하기에 좋은 방법입니
 ### 3. 작업 선택하기
 
 - **Good First Issues**: GitHub의 [Issue [Unassigned] 섹션](https://github.com/orgs/RooVetGit/projects/1) 참고
-- **문서화**: 이 `CONTRIBUTING.md`는 코드 기여의 주요 가이드지만, 다른 문서(사용자 가이드, API 문서 등)에 기여하고 싶다면 [Roo Code Docs 저장소](https://github.com/RooVetGit/Roo-Code-Docs)를 참고하거나 Discord 커뮤니티에 문의하세요.
+- **문서화**: 이 `CONTRIBUTING.md`는 코드 기여의 주요 가이드지만, 다른 문서(사용자 가이드, API 문서 등)에 기여하고 싶다면 [Mayai Code Docs 저장소](https://github.com/RooVetGit/Roo-Code-Docs)를 참고하거나 Discord 커뮤니티에 문의하세요.
 - **새 기능 제안**:
     1.  **초기 아이디어/논의**: 큰 틀의 아이디어나 초기 제안은 [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests)에서 시작하세요.
     2.  **공식 제안**: 구체적이고 실행 가능한 제안은 [Issues 페이지](https://github.com/RooVetGit/Roo-Code/issues/new/choose)에서 "Detailed Feature Proposal" 템플릿으로 Issue를 만드세요. 이는 **Issue-First 접근법**의 핵심입니다.
@@ -176,7 +176,7 @@ Roo Code 커뮤니티와 소통하는 것은 시작하기에 좋은 방법입니
     - 포크한 저장소를 로컬에 클론: `git clone https://github.com/당신의_아이디/Roo-Code.git`
 2.  **의존성 설치**: `npm run install:all`
 3.  **Webview(개발 모드) 실행**: `npm run dev` (Vite/React 앱의 HMR용)
-4.  **확장 디버깅**: VS Code에서 `F5`(또는 **Run** → **Start Debugging**)를 눌러 Roo Code가 로드된 Extension Development Host 창을 엽니다.
+4.  **확장 디버깅**: VS Code에서 `F5`(또는 **Run** → **Start Debugging**)를 눌러 Mayai Code가 로드된 Extension Development Host 창을 엽니다.
 
 webview(`webview-ui`) 변경은 Hot Module Replacement로 즉시 반영됩니다. 코어 확장(`src`) 변경은 Extension Development Host 재시작 필요.
 

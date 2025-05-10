@@ -2,10 +2,10 @@
 
 [日本語](../ja/CONTRIBUTING.md) • [한국어](../ko/CONTRIBUTING.md) • [Polski](../pl/CONTRIBUTING.md) • [Português (BR)](../pt-BR/CONTRIBUTING.md) • [Türkçe](../tr/CONTRIBUTING.md) • <b>Tiếng Việt</b> • [简体中文](../zh-CN/CONTRIBUTING.md) • [繁體中文](../zh-TW/CONTRIBUTING.md)
 
-# Đóng góp cho Roo Code
+# Đóng góp cho Mayai Code
 
-Roo Code là một dự án do cộng đồng dẫn dắt và chúng mình rất trân trọng mọi đóng góp. Để đảm bảo quy trình diễn ra suôn sẻ và hiệu quả cho tất cả mọi người, **chúng mình áp dụng nguyên tắc "[Issue-First](#2-nguyên-tắc-chính-cách-tiếp-cận-issue-first)".** Điều này có nghĩa là mọi công việc đều phải liên kết với một Issue trên GitHub _trước khi_ gửi Pull Request (xem [Chính sách PR](#chính-sách-pull-request-pr) để biết chi tiết). Hãy đọc kỹ hướng dẫn này để hiểu cách đóng góp.
-Hướng dẫn này giải thích cách đóng góp cho Roo Code, dù bạn sửa lỗi, thêm tính năng mới hay cải thiện tài liệu.
+Mayai Code là một dự án do cộng đồng dẫn dắt và chúng mình rất trân trọng mọi đóng góp. Để đảm bảo quy trình diễn ra suôn sẻ và hiệu quả cho tất cả mọi người, **chúng mình áp dụng nguyên tắc "[Issue-First](#2-nguyên-tắc-chính-cách-tiếp-cận-issue-first)".** Điều này có nghĩa là mọi công việc đều phải liên kết với một Issue trên GitHub _trước khi_ gửi Pull Request (xem [Chính sách PR](#chính-sách-pull-request-pr) để biết chi tiết). Hãy đọc kỹ hướng dẫn này để hiểu cách đóng góp.
+Hướng dẫn này giải thích cách đóng góp cho Mayai Code, dù bạn sửa lỗi, thêm tính năng mới hay cải thiện tài liệu.
 
 ## Mục lục
 
@@ -18,7 +18,7 @@ Hướng dẫn này giải thích cách đóng góp cho Roo Code, dù bạn sử
         - [Tài liệu](#tài-liệu)
         - [Ổn định](#ổn-định)
         - [Quốc tế hóa](#quốc-tế-hóa)
-    - [3. Tham gia cộng đồng Roo Code](#3-tham-gia-cộng-đồng-roo-code)
+    - [3. Tham gia cộng đồng Mayai Code](#3-tham-gia-cộng-đồng-roo-code)
 - [II. Tìm kiếm & lên kế hoạch đóng góp](#ii-tìm-kiếm--lên-kế-hoạch-đóng-góp)
     - [1. Các loại đóng góp](#1-các-loại-đóng-góp)
     - [2. Nguyên tắc chính: Cách tiếp cận Issue-First](#2-nguyên-tắc-chính-cách-tiếp-cận-issue-first)
@@ -49,7 +49,7 @@ Tất cả thành viên đóng góp phải tuân thủ [Quy tắc ứng xử](ht
 
 ### 2. Hiểu lộ trình phát triển dự án
 
-Roo Code có lộ trình phát triển rõ ràng, định hướng ưu tiên và tương lai của dự án. Hiểu lộ trình này giúp bạn:
+Mayai Code có lộ trình phát triển rõ ràng, định hướng ưu tiên và tương lai của dự án. Hiểu lộ trình này giúp bạn:
 
 - Định hướng đóng góp phù hợp với mục tiêu dự án
 - Xác định lĩnh vực bạn có thể đóng góp tốt nhất
@@ -101,19 +101,19 @@ Chúng mình muốn giảm đáng kể số lỗi và tăng cường kiểm th�
 
 Chúng mình muốn Roo nói được ngôn ngữ của mọi người:
 
-- 我们希望 Roo Code 说每个人的语言
-- Queremos que Roo Code hable el idioma de todos
-- हम चाहते हैं कि Roo Code हर किसी की भाषा बोले
-- نريد أن يتحدث Roo Code لغة الجميع
+- 我们希望 Mayai Code 说每个人的语言
+- Queremos que Mayai Code hable el idioma de todos
+- हम चाहते हैं कि Mayai Code हर किसी की भाषा बोले
+- نريد أن يتحدث Mayai Code لغة الجميع
 
 Chúng mình đặc biệt hoan nghênh các đóng góp giúp tiến gần hơn tới mục tiêu lộ trình. Nếu bạn làm việc liên quan đến các trụ cột này, hãy đề cập trong mô tả PR.
 
-### 3. Tham gia cộng đồng Roo Code
+### 3. Tham gia cộng đồng Mayai Code
 
-Kết nối với cộng đồng Roo Code là cách tuyệt vời để bắt đầu:
+Kết nối với cộng đồng Mayai Code là cách tuyệt vời để bắt đầu:
 
 - **Cách chính**:
-    1.  Tham gia [cộng đồng Roo Code trên Discord](https://discord.gg/roocode).
+    1.  Tham gia [cộng đồng Mayai Code trên Discord](https://discord.gg/roocode).
     2.  Sau khi tham gia, gửi tin nhắn trực tiếp (DM) cho **Hannes Rudolph** (Discord: `hrudolph`) để trao đổi về mong muốn đóng góp và nhận hướng dẫn.
 - **Dành cho cộng tác viên giàu kinh nghiệm**: Nếu bạn quen với cách tiếp cận issue-first, có thể tham gia trực tiếp trên GitHub bằng cách theo dõi [bảng Kanban](https://github.com/orgs/RooVetGit/projects/1) và trao đổi qua issues, pull requests.
 
@@ -150,8 +150,8 @@ Cách này giúp chúng mình theo dõi công việc, đảm bảo thay đổi l
 
 ### 3. Quyết định việc cần làm
 
-- **Good First Issues**: Xem mục "Issue [Unassigned]" trên [Dự án Roo Code Issues](https://github.com/orgs/RooVetGit/projects/1) trên GitHub.
-- **Tài liệu**: Dù `CONTRIBUTING.md` là hướng dẫn chính cho đóng góp mã nguồn, nếu bạn muốn đóng góp cho tài liệu khác (hướng dẫn người dùng, API...), hãy xem [repo Roo Code Docs](https://github.com/RooVetGit/Roo-Code-Docs) hoặc hỏi trên Discord.
+- **Good First Issues**: Xem mục "Issue [Unassigned]" trên [Dự án Mayai Code Issues](https://github.com/orgs/RooVetGit/projects/1) trên GitHub.
+- **Tài liệu**: Dù `CONTRIBUTING.md` là hướng dẫn chính cho đóng góp mã nguồn, nếu bạn muốn đóng góp cho tài liệu khác (hướng dẫn người dùng, API...), hãy xem [repo Mayai Code Docs](https://github.com/RooVetGit/Roo-Code-Docs) hoặc hỏi trên Discord.
 - **Đề xuất tính năng mới**:
     1.  **Ý tưởng/thảo luận ban đầu**: Với ý tưởng chung hoặc mới, hãy bắt đầu thảo luận ở [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests).
     2.  **Đề xuất chính thức**: Với đề xuất cụ thể, sẵn sàng thực hiện, hãy tạo issue "Detailed Feature Proposal" bằng template trên [trang issues](https://github.com/RooVetGit/Roo-Code/issues/new/choose). Đây là phần quan trọng của **cách tiếp cận Issue-First**.
@@ -176,7 +176,7 @@ Làm theo các bước sau để lập trình và gửi đóng góp.
     - Clone repo về máy: `git clone https://github.com/TEN_TAI_KHOAN/Roo-Code.git`
 2.  **Cài đặt phụ thuộc**: `npm run install:all`
 3.  **Chạy Webview (Dev Mode)**: `npm run dev` (cho app Vite/React với HMR)
-4.  **Debug extension**: Nhấn `F5` trong VS Code (hoặc **Run** → **Start Debugging**) để mở cửa sổ Extension Development Host với Roo Code đã nạp.
+4.  **Debug extension**: Nhấn `F5` trong VS Code (hoặc **Run** → **Start Debugging**) để mở cửa sổ Extension Development Host với Mayai Code đã nạp.
 
 Thay đổi ở webview (`webview-ui`) sẽ xuất hiện ngay nhờ Hot Module Replacement. Thay đổi ở extension chính (`src`) cần khởi động lại Extension Development Host.
 

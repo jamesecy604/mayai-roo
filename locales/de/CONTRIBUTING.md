@@ -2,10 +2,10 @@
 
 [日本語](../ja/CONTRIBUTING.md) • [한국어](../ko/CONTRIBUTING.md) • [Polski](../pl/CONTRIBUTING.md) • [Português (BR)](../pt-BR/CONTRIBUTING.md) • [Türkçe](../tr/CONTRIBUTING.md) • [Tiếng Việt](../vi/CONTRIBUTING.md) • [简体中文](../zh-CN/CONTRIBUTING.md) • [繁體中文](../zh-TW/CONTRIBUTING.md)
 
-# Beitrag zu Roo Code
+# Beitrag zu Mayai Code
 
-Roo Code ist ein Community-getriebenes Projekt und wir schätzen jeden Beitrag sehr. Damit alles reibungslos läuft, **arbeiten wir nach dem Prinzip "[Issue-First](#2-wichtiges-prinzip-issue-first-ansatz)".** Das heißt: Jede Arbeit muss mit einem GitHub-Issue verknüpft sein, _bevor_ ein Pull Request eingereicht wird (siehe unsere [PR-Richtlinie](#pull-request-pr-richtlinie) für Details). Lies diesen Leitfaden aufmerksam, um zu verstehen, wie du beitragen kannst.
-Dieser Leitfaden erklärt, wie du zu Roo Code beitragen kannst – egal ob du Bugs behebst, Features hinzufügst oder die Doku verbesserst.
+Mayai Code ist ein Community-getriebenes Projekt und wir schätzen jeden Beitrag sehr. Damit alles reibungslos läuft, **arbeiten wir nach dem Prinzip "[Issue-First](#2-wichtiges-prinzip-issue-first-ansatz)".** Das heißt: Jede Arbeit muss mit einem GitHub-Issue verknüpft sein, _bevor_ ein Pull Request eingereicht wird (siehe unsere [PR-Richtlinie](#pull-request-pr-richtlinie) für Details). Lies diesen Leitfaden aufmerksam, um zu verstehen, wie du beitragen kannst.
+Dieser Leitfaden erklärt, wie du zu Mayai Code beitragen kannst – egal ob du Bugs behebst, Features hinzufügst oder die Doku verbesserst.
 
 ## Inhaltsverzeichnis
 
@@ -18,7 +18,7 @@ Dieser Leitfaden erklärt, wie du zu Roo Code beitragen kannst – egal ob du Bu
         - [Dokumentation](#dokumentation)
         - [Stabilität](#stabilität)
         - [Internationalisierung](#internationalisierung)
-    - [3. Werde Teil der Roo Code Community](#3-werde-teil-der-roo-code-community)
+    - [3. Werde Teil der Mayai Code Community](#3-werde-teil-der-roo-code-community)
 - [II. Beitrag finden & planen](#ii-beitrag-finden--planen)
     - [1. Beitragsarten](#1-beitragsarten)
     - [2. Wichtiges Prinzip: Issue-First-Ansatz](#2-wichtiges-prinzip-issue-first-ansatz)
@@ -49,7 +49,7 @@ Alle Mitwirkenden müssen sich an unseren [Verhaltenskodex](https://github.com/R
 
 ### 2. Projekt-Roadmap verstehen
 
-Roo Code hat eine klare Entwicklungs-Roadmap, die unsere Prioritäten und die Zukunft vorgibt. Wenn du die Roadmap kennst, kannst du:
+Mayai Code hat eine klare Entwicklungs-Roadmap, die unsere Prioritäten und die Zukunft vorgibt. Wenn du die Roadmap kennst, kannst du:
 
 - Deine Beiträge an den Projektzielen ausrichten
 - Bereiche finden, in denen deine Skills besonders wertvoll sind
@@ -101,19 +101,19 @@ Wir wollen deutlich weniger Bugs und mehr automatisierte Tests:
 
 Roo soll jede Sprache sprechen:
 
-- Wir wollen, dass Roo Code jede Sprache spricht
-- Queremos que Roo Code hable el idioma de todos
-- Wir wollen, dass Roo Code jede Sprache spricht
-- نريد أن يتحدث Roo Code لغة الجميع
+- Wir wollen, dass Mayai Code jede Sprache spricht
+- Queremos que Mayai Code hable el idioma de todos
+- Wir wollen, dass Mayai Code jede Sprache spricht
+- نريد أن يتحدث Mayai Code لغة الجميع
 
 Beiträge, die unsere Roadmap-Ziele voranbringen, sind besonders willkommen. Wenn du an etwas arbeitest, das zu diesen Säulen passt, erwähne das bitte in deiner PR-Beschreibung.
 
-### 3. Werde Teil der Roo Code Community
+### 3. Werde Teil der Mayai Code Community
 
-Mit der Roo Code Community in Kontakt zu kommen, ist ein super Start:
+Mit der Mayai Code Community in Kontakt zu kommen, ist ein super Start:
 
 - **Hauptweg**:
-    1.  Tritt der [Roo Code Discord Community](https://discord.gg/roocode) bei.
+    1.  Tritt der [Mayai Code Discord Community](https://discord.gg/roocode) bei.
     2.  Schreib dann eine Direktnachricht (DM) an **Hannes Rudolph** (Discord: `hrudolph`), um dein Interesse zu besprechen und Tipps zu bekommen.
 - **Alternative für Erfahrene**: Wenn du mit dem Issue-First-Ansatz vertraut bist, kannst du direkt über GitHub mitmachen, indem du das [Kanban-Board](https://github.com/orgs/RooVetGit/projects/1) nutzt und über Issues und Pull Requests kommunizierst.
 
@@ -150,8 +150,8 @@ So behalten wir den Überblick, stellen sicher, dass Änderungen gewünscht sind
 
 ### 3. Was soll ich machen?
 
-- **Good First Issues**: Schau im Bereich "Issue [Unassigned]" auf unserem [Roo Code Issues](https://github.com/orgs/RooVetGit/projects/1) GitHub-Projekt.
-- **Dokumentation**: Während dieses `CONTRIBUTING.md` der Hauptleitfaden für Code-Beiträge ist, findest du weitere Doku (wie User-Guides oder API-Doku) im [Roo Code Docs Repository](https://github.com/RooVetGit/Roo-Code-Docs) oder frag in der Discord-Community nach.
+- **Good First Issues**: Schau im Bereich "Issue [Unassigned]" auf unserem [Mayai Code Issues](https://github.com/orgs/RooVetGit/projects/1) GitHub-Projekt.
+- **Dokumentation**: Während dieses `CONTRIBUTING.md` der Hauptleitfaden für Code-Beiträge ist, findest du weitere Doku (wie User-Guides oder API-Doku) im [Mayai Code Docs Repository](https://github.com/RooVetGit/Roo-Code-Docs) oder frag in der Discord-Community nach.
 - **Neue Features vorschlagen**:
     1.  **Erste Idee/Diskussion**: Für grobe oder neue Feature-Ideen starte eine Diskussion in [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests).
     2.  **Formaler Vorschlag**: Für konkrete, umsetzbare Feature-Vorschläge nutze die "Detailed Feature Proposal"-Vorlage auf unserer [Issues-Seite](https://github.com/RooVetGit/Roo-Code/issues/new/choose). Das ist ein wichtiger Teil unseres **Issue-First-Ansatzes**.
@@ -176,7 +176,7 @@ Folge diesen Schritten beim Coden und Einreichen deiner Arbeit.
     - Klone deinen Fork lokal: `git clone https://github.com/DEIN_USERNAME/Roo-Code.git`
 2.  **Abhängigkeiten installieren**: `npm run install:all`
 3.  **Webview (Dev Mode) starten**: `npm run dev` (für Vite/React-App mit HMR)
-4.  **Extension debuggen**: Drücke `F5` in VS Code (oder **Run** → **Start Debugging**), um ein neues Extension Development Host-Fenster mit Roo Code zu öffnen.
+4.  **Extension debuggen**: Drücke `F5` in VS Code (oder **Run** → **Start Debugging**), um ein neues Extension Development Host-Fenster mit Mayai Code zu öffnen.
 
 Webview-Änderungen (in `webview-ui`) erscheinen sofort dank Hot Module Replacement. Änderungen an der Core-Extension (in `src`) erfordern einen Neustart des Extension Development Host.
 

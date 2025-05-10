@@ -2,10 +2,10 @@
 
 [日本語](../ja/CONTRIBUTING.md) • [한국어](../ko/CONTRIBUTING.md) • [Polski](../pl/CONTRIBUTING.md) • [Português (BR)](../pt-BR/CONTRIBUTING.md) • [Türkçe](../tr/CONTRIBUTING.md) • [Tiếng Việt](../vi/CONTRIBUTING.md) • [简体中文](../zh-CN/CONTRIBUTING.md) • <b>繁體中文</b>
 
-# 參與 Roo Code 貢獻
+# 參與 Mayai Code 貢獻
 
-Roo Code 是一個由社群驅動的專案，我們非常重視每一位貢獻者。為了讓每個人的貢獻流程順暢且有效率，**我們採用「[Issue-First](#2-關鍵原則-issue-first-方式)」原則。** 這代表所有工作都必須在提交 Pull Request _之前_ 先關聯一個 GitHub Issue（詳情請見[PR 政策](#pull-request-pr-政策)）。請仔細閱讀本指南，了解如何參與貢獻。
-本指南說明如何為 Roo Code 做出貢獻，無論是修正 bug、加入新功能或完善文件。
+Mayai Code 是一個由社群驅動的專案，我們非常重視每一位貢獻者。為了讓每個人的貢獻流程順暢且有效率，**我們採用「[Issue-First](#2-關鍵原則-issue-first-方式)」原則。** 這代表所有工作都必須在提交 Pull Request _之前_ 先關聯一個 GitHub Issue（詳情請見[PR 政策](#pull-request-pr-政策)）。請仔細閱讀本指南，了解如何參與貢獻。
+本指南說明如何為 Mayai Code 做出貢獻，無論是修正 bug、加入新功能或完善文件。
 
 ## 目錄
 
@@ -18,7 +18,7 @@ Roo Code 是一個由社群驅動的專案，我們非常重視每一位貢獻�
         - [文件](#文件)
         - [穩定性](#穩定性)
         - [國際化](#國際化)
-    - [3. 加入 Roo Code 社群](#3-加入-roo-code-社群)
+    - [3. 加入 Mayai Code 社群](#3-加入-roo-code-社群)
 - [II. 尋找與規劃你的貢獻](#ii-尋找與規劃你的貢獻)
     - [1. 貢獻類型](#1-貢獻類型)
     - [2. 關鍵原則：Issue-First 方式](#2-關鍵原則-issue-first-方式)
@@ -49,7 +49,7 @@ Roo Code 是一個由社群驅動的專案，我們非常重視每一位貢獻�
 
 ### 2. 了解專案藍圖
 
-Roo Code 有明確的開發藍圖，指引我們的優先順序與未來方向。了解藍圖有助於你：
+Mayai Code 有明確的開發藍圖，指引我們的優先順序與未來方向。了解藍圖有助於你：
 
 - 讓你的貢獻與專案目標一致
 - 找到你最擅長的領域
@@ -99,21 +99,21 @@ Roo Code 有明確的開發藍圖，指引我們的優先順序與未來方向�
 
 #### 國際化
 
-我們希望 Roo Code 能說每個人的語言：
+我們希望 Mayai Code 能說每個人的語言：
 
-- 我們希望 Roo Code 說每個人的語言
-- Queremos que Roo Code hable el idioma de todos
-- हम चाहते हैं कि Roo Code हर किसी की भाषा बोले
-- نريد أن يتحدث Roo Code لغة الجميع
+- 我們希望 Mayai Code 說每個人的語言
+- Queremos que Mayai Code hable el idioma de todos
+- हम चाहते हैं कि Mayai Code हर किसी की भाषा बोले
+- نريد أن يتحدث Mayai Code لغة الجميع
 
 特別歡迎推動藍圖目標的貢獻。如果你的工作與這些方向相關，請在 PR 描述中說明。
 
-### 3. 加入 Roo Code 社群
+### 3. 加入 Mayai Code 社群
 
-加入 Roo Code 社群是很好的起點：
+加入 Mayai Code 社群是很好的起點：
 
 - **主要方式**：
-    1.  加入 [Roo Code Discord 社群](https://discord.gg/roocode)。
+    1.  加入 [Mayai Code Discord 社群](https://discord.gg/roocode)。
     2.  加入後，私訊 **Hannes Rudolph**（Discord: `hrudolph`），表達你的興趣並獲得指導。
 - **有經驗的貢獻者可選**：如果你熟悉 Issue-First 方式，可以直接透過 GitHub 跟進 [看板](https://github.com/orgs/RooVetGit/projects/1)，用 issue 與 pull request 溝通。
 
@@ -150,8 +150,8 @@ Roo Code 有明確的開發藍圖，指引我們的優先順序與未來方向�
 
 ### 3. 決定要做什麼
 
-- **Good First Issues**：查看 GitHub [Roo Code Issues 專案](https://github.com/orgs/RooVetGit/projects/1) 的「未分配 Issue」區塊。
-- **文件**：雖然本 `CONTRIBUTING.md` 是程式碼貢獻主指南，但如想參與其他文件（如使用者指南、API 文件），請參考 [Roo Code Docs 倉庫](https://github.com/RooVetGit/Roo-Code-Docs) 或在 Discord 社群詢問。
+- **Good First Issues**：查看 GitHub [Mayai Code Issues 專案](https://github.com/orgs/RooVetGit/projects/1) 的「未分配 Issue」區塊。
+- **文件**：雖然本 `CONTRIBUTING.md` 是程式碼貢獻主指南，但如想參與其他文件（如使用者指南、API 文件），請參考 [Mayai Code Docs 倉庫](https://github.com/RooVetGit/Roo-Code-Docs) 或在 Discord 社群詢問。
 - **提出新功能**：
     1.  **初步想法/討論**：廣泛或初步想法可在 [GitHub Discussions](https://github.com/RooVetGit/Roo-Code/discussions/categories/feature-requests) 討論。
     2.  **正式提案**：具體、可執行的建議請用 [issues 頁面](https://github.com/RooVetGit/Roo-Code/issues/new/choose) 的「Detailed Feature Proposal」模板新建 issue。這是 **Issue-First 方式** 的關鍵環節。
@@ -176,7 +176,7 @@ Roo Code 有明確的開發藍圖，指引我們的優先順序與未來方向�
     - 本地 clone 你的 fork：`git clone https://github.com/你的帳號/Roo-Code.git`
 2.  **安裝相依套件**：`npm run install:all`
 3.  **執行 Webview（開發模式）**：`npm run dev`（適用於 Vite/React 應用，支援 HMR）
-4.  **除錯擴充功能**：在 VS Code 按 `F5`（或 **Run** → **Start Debugging**），開啟 Roo Code 的 Extension Development Host 視窗
+4.  **除錯擴充功能**：在 VS Code 按 `F5`（或 **Run** → **Start Debugging**），開啟 Mayai Code 的 Extension Development Host 視窗
 
 webview（`webview-ui`）的變更會即時熱更新（HMR）。核心擴充（`src`）的變更需重啟 Extension Development Host。
 
