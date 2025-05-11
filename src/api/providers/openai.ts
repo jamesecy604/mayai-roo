@@ -1,6 +1,6 @@
-import { Anthropic } from "@anthropic-ai/sdk"
 import OpenAI, { AzureOpenAI } from "openai"
 import axios from "axios"
+import { Anthropic } from "@anthropic-ai/sdk"
 
 import {
 	ApiHandlerOptions,
@@ -17,11 +17,20 @@ import { BaseProvider } from "./base-provider"
 import { XmlMatcher } from "../../utils/xml-matcher"
 import { DEFAULT_HEADERS, DEEP_SEEK_DEFAULT_TEMPERATURE } from "./constants"
 import { calculateApiCostOpenAI } from "../../utils/cost"
-import {  GeminiModelId, geminiModels } from "../../shared/api"
-import { DeepSeekModelId, deepSeekModels } from "../../shared/api"
-
-import {  AnthropicModelId, anthropicModels } from "../../shared/api"
-import {  OpenAiNativeModelId, openAiNativeModels } from "../../shared/api"
+import { 
+  GeminiModelId, 
+  geminiModels,
+  geminiDefaultModelId,
+  deepSeekModels,
+  deepSeekDefaultModelId,
+  AnthropicModelId, 
+  anthropicModels,
+  anthropicDefaultModelId,
+  OpenAiNativeModelId, 
+  openAiNativeModels,
+  openAiNativeDefaultModelId
+} from "../../shared/api"
+import { getModelParams } from "../index"
 
 
 export const AZURE_AI_INFERENCE_PATH = "/models/chat/completions"
@@ -74,8 +83,9 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 		}
 	}
 
-	override async *createMessage(systemPrompt: string, messages: Anthropic.Messages.MessageParam[]): ApiStream {
+	override async *createMessage(systemPrompt: string, messages: Anthropic.MessageParam[]): ApiStream {
 		const modelInfo = this.getModel().info
+		const costModelInfo = this.getCostModel().info
 		const modelUrl = this.options.openAiBaseUrl ?? ""
 		const modelId = this.options.openAiModelId ?? ""
 		const enabledR1Format = this.options.openAiR1FormatEnabled ?? false
@@ -201,7 +211,7 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 			}
 
 			if (lastUsage) {
-				yield this.processUsageMetrics(lastUsage, modelInfo)
+				yield this.processUsageMetrics(lastUsage, costModelInfo)
 			}
 		} else {
 			// o1 for instance doesnt support streaming, non-1 temp, or system prompt
@@ -229,7 +239,7 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 				text: response.choices[0]?.message.content || "",
 			}
 
-			yield this.processUsageMetrics(response.usage, modelInfo)
+			yield this.processUsageMetrics(response.usage, costModelInfo)
 		}
 	}
 
@@ -250,32 +260,104 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 	// 		info: this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults,
 	// 	}
 	// }
-	override getModel(): { id: string; info: ModelInfo } {
-		const modelId = this.options.openAiModelId
-		if (modelId) {
-			if (modelId in deepSeekModels) {
-				const id = modelId as DeepSeekModelId
-				return { id, info: deepSeekModels[id] }
+	getAnthropicModel(modelId:string) {
+			
+			let id = modelId && modelId in anthropicModels ? (modelId as AnthropicModelId) : anthropicDefaultModelId
+			const info: ModelInfo = anthropicModels[id]
+	
+			// Track the original model ID for special variant handling
+			const virtualId = id
+	
+			// The `:thinking` variant is a virtual identifier for the
+			// `claude-3-7-sonnet-20250219` model with a thinking budget.
+			// We can handle this more elegantly in the future.
+			if (id === "claude-3-7-sonnet-20250219:thinking") {
+				id = "claude-3-7-sonnet-20250219"
 			}
-			if (modelId in geminiModels) {
-				const id = modelId as GeminiModelId
-				return { id, info: geminiModels[id] }
-			}
-			if (modelId in openAiNativeModels) {
-				const id = modelId as OpenAiNativeModelId
-				return { id, info: openAiNativeModels[id] }
-			}
-			if (modelId in anthropicModels) {
-				const id = modelId as AnthropicModelId
-				return { id, info: anthropicModels[id] }
-			}
-		}
-
+	
 			return {
+				id,
+				info,
+				virtualId, // Include the original ID to use for header selection
+				...getModelParams({ options: this.options, model: info }),
+			}
+	}
+	getDeepseekModel(modelId:string): { id: string; info: ModelInfo } {
+			
+			const info = deepSeekModels[modelId as keyof typeof deepSeekModels] || deepSeekModels[deepSeekDefaultModelId]
+	
+			return {
+				id: modelId,
+				info,
+				...getModelParams({ options: this.options, model: info }),
+			}
+	}
+	getGeminiModel(id:string) {
+			
+			let info: ModelInfo = geminiModels[id as GeminiModelId]
+	
+			if (id?.endsWith(":thinking")) {
+				id = id.slice(0, -":thinking".length)
+	
+				if (geminiModels[id as GeminiModelId]) {
+					info = geminiModels[id as GeminiModelId]
+	
+					return {
+						id,
+						info,
+						thinkingConfig: this.options.modelMaxThinkingTokens
+							? { thinkingBudget: this.options.modelMaxThinkingTokens }
+							: undefined,
+						maxOutputTokens: this.options.modelMaxTokens ?? info.maxTokens ?? undefined,
+					}
+				}
+			}
+	
+			if (!info) {
+				id = geminiDefaultModelId
+				info = geminiModels[geminiDefaultModelId]
+			}
+	
+			return { id, info }
+	}
+	private getOpenaiNativeModel(modelId: string): { id: string; info: ModelInfo } {
+		if (modelId && modelId in openAiNativeModels) {
+			const id = modelId as OpenAiNativeModelId
+			return { id, info: openAiNativeModels[id] }
+		}
+		return { id: openAiNativeDefaultModelId, info: openAiNativeModels[openAiNativeDefaultModelId] }
+	}
+	
+	override getModel(): { id: string; info: ModelInfo } {
+		return {
 			id: this.options.openAiModelId ?? "",
 			info: this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults,
 		}
 	}
+
+	getCostModel(): { id: string; info: ModelInfo } {
+		const modelId = this.options.openAiModelId
+		if (modelId) {
+			if (modelId in deepSeekModels) {
+				return this.getDeepseekModel(modelId)
+			}
+			if (modelId in geminiModels) {
+				return this.getGeminiModel(modelId)
+			}
+			if (modelId && modelId in openAiNativeModels) {
+				return this.getOpenaiNativeModel(modelId)
+			}
+			if (modelId in anthropicModels) {
+				return this.getAnthropicModel(modelId)
+			}
+		}
+
+		return {
+			id: this.options.openAiModelId ?? "",
+			info: this.options.openAiCustomModelInfo ?? openAiModelInfoSaneDefaults,
+		}
+	}
+
 
 	async completePrompt(prompt: string): Promise<string> {
 		try {
@@ -304,7 +386,7 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 	private async *handleO3FamilyMessage(
 		modelId: string,
 		systemPrompt: string,
-		messages: Anthropic.Messages.MessageParam[],
+		messages: Anthropic.MessageParam[],
 	): ApiStream {
 		if (this.options.openAiStreamingEnabled ?? true) {
 			const methodIsAzureAiInference = this._isAzureAiInference(this.options.openAiBaseUrl)
@@ -356,6 +438,24 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 		}
 	}
 
+	private _getUrlHost(baseUrl?: string): string {
+		try {
+			return new URL(baseUrl ?? "").host
+		} catch (error) {
+			return ""
+		}
+	}
+
+	private _isGrokXAI(baseUrl?: string): boolean {
+		const urlHost = this._getUrlHost(baseUrl)
+		return urlHost.includes("x.ai")
+	}
+
+	private _isAzureAiInference(baseUrl?: string): boolean {
+		const urlHost = this._getUrlHost(baseUrl)
+		return urlHost.endsWith(".services.ai.azure.com")
+	}
+
 	private async *handleStreamResponse(stream: AsyncIterable<OpenAI.Chat.Completions.ChatCompletionChunk>): ApiStream {
 		for await (const chunk of stream) {
 			const delta = chunk.choices[0]?.delta
@@ -376,23 +476,6 @@ export class OpenAiHandler extends BaseProvider implements SingleCompletionHandl
 		}
 	}
 
-	private _getUrlHost(baseUrl?: string): string {
-		try {
-			return new URL(baseUrl ?? "").host
-		} catch (error) {
-			return ""
-		}
-	}
-
-	private _isGrokXAI(baseUrl?: string): boolean {
-		const urlHost = this._getUrlHost(baseUrl)
-		return urlHost.includes("x.ai")
-	}
-
-	private _isAzureAiInference(baseUrl?: string): boolean {
-		const urlHost = this._getUrlHost(baseUrl)
-		return urlHost.endsWith(".services.ai.azure.com")
-	}
 }
 
 export async function getOpenAiModels(baseUrl?: string, apiKey?: string, openAiHeaders?: Record<string, string>) {
